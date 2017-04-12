@@ -1,0 +1,12 @@
+{
+  "sender":
+  {
+    "account" : "sendmail@163.com",
+    "password" : "*********",
+    "service" : "163"
+  },
+  "receiver":
+  {
+    "account":"receivemail@163.com"
+  }
+}

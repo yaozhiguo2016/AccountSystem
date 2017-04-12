@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= user.name %></title>
+</head>
+<body>
+<script src="../javascripts/lib/jquery2.1.3.min.js"></script>
+<div>name:<%= user.name %></div>
+<div>email:<%= user.email %></div>
+<div>createTime:<%= user.createTime %></div>
+<div><a href="#" onclick="onLogout();">logout</a></div>
+<script>
+
+    var host = "http://localhost:3000/";
+
+    function onLogout(){
+        $.ajax({
+            contentType:'application/json;charset=UTF-8',
+            type: 'GET',
+            url: host + "login/out",
+            //data: $('#dataForm').serialize(),
+            //data:{name:loginText},
+            success: function(data){
+                console.log(data);
+                if (data.code == 200){
+                    window.location.assign(host);
+                }
+            },
+            error:function(xhr, e, eo){
+                console.log(e);
+            },
+            complete:function(e){
+                console.log(e);
+            },
+            dataType:'json',
+            processData:true
+        });
+    }
+</script>
+</body>
+</html>

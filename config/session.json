@@ -1,0 +1,4 @@
+{
+	"secret": "account_system",
+	"maxAge": 3600000
+}
