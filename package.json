@@ -1,10 +1,22 @@
 {
   "name": "accountsystem",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "start": "node ./bin/www"
   },
+  "contributors": [
+    {
+      "name": "yaozhiguo",
+      "email": "yaozhiguo86@163.com"
+    }
+  ],
+  "keywords": [
+    "account",
+    "nodejs"
+  ],
+  "license": "MIT",
+  "description": "An account system demo shows how to handle register and login with nodejs. ",
   "dependencies": {
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
