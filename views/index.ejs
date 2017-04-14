@@ -3,30 +3,7 @@
 <!--[if !IE]><!-->
 <html lang="en">
 <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Stanley</title>
-  <meta name="description" content="Worthy a Bootstrap-based, Responsive HTML5 Template">
-  <meta name="author" content="htmlcoder.me">
-
-  <!-- Mobile Meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="favicon.ico">
-  <!-- Web Fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
-  <!-- Bootstrap core CSS -->
-  <link href="./stylesheets/bootstrap3.3.5/css/bootstrap.css" rel="stylesheet">
-  <!-- Font Awesome CSS -->
-  <link href="./fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-  <!-- Plugins -->
-  <link href="./stylesheets/animations.css" rel="stylesheet">
-  <!-- Worthy core CSS file -->
-  <link href="./stylesheets/style.css" rel="stylesheet">
-  <!-- Custom css -->
-  <link href="./stylesheets/custom.css" rel="stylesheet">
-</head>
+<% include head.ejs%>
 
 <body class="no-trans">
 <!-- scrollToTop -->
@@ -93,7 +70,7 @@
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#clients">Clients</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" id="loginA" onclick="onlogin();"><%= title %></a></li>
+                    <li><a href="#" id="loginA" onclick="AC.loginDirect();"><%= title %></a></li>
                   </ul>
                 </div>
 
@@ -984,80 +961,7 @@
 </div>
 <!-- section end -->
 
-<!-- footer start -->
-<!-- ================ -->
-<footer id="footer">
-
-  <!-- .footer start -->
-  <!-- ================ -->
-  <div class="footer section">
-    <div class="container">
-      <h1 class="title text-center" id="contact">Contact Us</h1>
-      <div class="space"></div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="footer-content">
-            <p class="large">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel nam magnam natus tempora cumque, aliquam deleniti voluptatibus voluptas. Repellat vel, et itaque commodi iste ab, laudantium voluptas deserunt nobis.</p>
-            <ul class="list-icons">
-              <li><i class="fa fa-map-marker pr-10"></i> One infinity loop, 54100</li>
-              <li><i class="fa fa-phone pr-10"></i> +00 1234567890</li>
-              <li><i class="fa fa-fax pr-10"></i> +00 1234567891 </li>
-              <li><i class="fa fa-envelope-o pr-10"></i> your@email.com</li>
-            </ul>
-            <ul class="social-links">
-              <li class="facebook"><a target="_blank" href="https://www.facebook.com/pages/HtmlCoder/714570988650168"><i class="fa fa-facebook"></i></a></li>
-              <li class="twitter"><a target="_blank" href="https://twitter.com/HtmlcoderMe"><i class="fa fa-twitter"></i></a></li>
-              <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
-              <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
-              <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
-              <li class="youtube"><a target="_blank" href="http://www.youtube.com"><i class="fa fa-youtube"></i></a></li>
-              <li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
-              <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="footer-content">
-            <form role="form" method="post" action="http://localhost:3000/message/send-message" id="footer-form">
-              <div class="form-group has-feedback">
-                <label class="sr-only" for="name2">Name</label>
-                <input type="text" class="form-control" id="name2" placeholder="Name" name="name2" required>
-                <i class="fa fa-user form-control-feedback"></i>
-              </div>
-              <div class="form-group has-feedback">
-                <label class="sr-only" for="email2">Email address</label>
-                <input type="email" class="form-control" id="email2" placeholder="Enter email" name="email2" required>
-                <i class="fa fa-envelope form-control-feedback"></i>
-              </div>
-              <div class="form-group has-feedback">
-                <label class="sr-only" for="message2">Message</label>
-                <textarea class="form-control" rows="8" id="message2" placeholder="Message" name="message2" required></textarea>
-                <i class="fa fa-pencil form-control-feedback"></i>
-              </div>
-              <input type="submit" value="Send" class="btn btn-default">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- .footer end -->
-
-  <!-- .subfooter start -->
-  <!-- ================ -->
-  <div class="subfooter">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <p class="text-center">Copyright © 2014 Worthy by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a>.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- .subfooter end -->
-
-</footer>
-<!-- footer end -->
+<% include foot.ejs%>
 
 <!-- JavaScript files placed at the end of the document so the pages load faster
 ================================================== -->
@@ -1082,36 +986,5 @@
 
 <!-- Custom Scripts -->
 <script type="text/javascript" src="./javascripts/custom.js"></script>
-<script>
-
-    var host = "http://localhost:3000/";
-
-  function onlogin(){
-      var loginText = document.getElementById('loginA').innerHTML;
-      if (loginText == 'login'){
-          window.location.assign(host + 'login');
-      }else{
-          window.location.assign(host + 'user/info?name=' + loginText);
-          /*$.ajax({
-              contentType:'application/json;charset=UTF-8',
-              type: 'GET',
-              url: host + "user/info",
-              //data: $('#dataForm').serialize(),
-              data:{name:loginText},
-              success: function(data){
-                  console.log(data);
-              },
-              error:function(xhr, e, eo){
-                  console.log(e);
-              },
-              complete:function(e){
-                  console.log(e);
-              },
-              dataType:'json',
-              processData:true
-          });*/
-      }
-  }
-</script>
 </body>
 </html>
