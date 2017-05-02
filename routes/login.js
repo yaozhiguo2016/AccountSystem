@@ -11,7 +11,12 @@ let router = express.Router();
  * 登录页面
  */
 router.get('/', (req, res, next)=>{
-    res.render('login');
+    if (req.session.user){
+        res.send({code:200, msg:'already login'});
+        //res.redirect('../index');
+    }else{
+        res.render('login');
+    }
 });
 
 /**

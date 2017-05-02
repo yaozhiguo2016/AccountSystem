@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>authorize</title>
+</head>
+<body>
+<div><h2>应用授权</h2></div>
+<hr>
+<div>
+    <h4><%= user %>, 确定要授权给<%= app %>么？</h4>
+</div>
+<input type="button" onclick="Auth.authorizePost();" value="确认" style="width: 80px;"/>
+<script type="text/javascript" src="../../javascripts/lib/jquery2.1.3.min.js"></script>
+<script src="../../javascripts/oauth.js"></script>
+</body>
+</html>
