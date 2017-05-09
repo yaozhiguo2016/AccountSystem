@@ -1,13 +1,11 @@
 # AccountSystem
-An account system demo shows how to handle register and login with nodejs.
+账户系统的demo
 # topics
-* web page template with bootstrap
-* expressjs4.x was used for web server
-* login, logout, register, anonymous login with http
-* activate account through email
-* database with mysql,used general-pool to access database and manage the connection pool
-* oauth2 passport
+* 页面布局使用bootstrap css框架
+* web服务器使用express4.x
+* 数据库使用mysql，访问和连接池库是general-pool.
+* 包含登入，登出，会话保持，邮件收发，账户邮件激活，oauth2.0协议实现模型等
 
 # tips
-* /lib/db/mysql/config.json: configuration file of mysql
-* /acount_system.sql: sql script for this app
+* /lib/db/mysql/config.json: mysql配置文件
+* /acount_system.sql: 本例中使用的mysql备份文件
