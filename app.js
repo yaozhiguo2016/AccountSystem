@@ -13,6 +13,7 @@ let login = require('./routes/login');
 let register = require('./routes/register');
 let user = require('./routes/user');
 let message = require('./routes/message');
+let forget = require('./routes/forget');
 
 let apiOutput = require('./routes/api/v1/apiOutput');
 let oauth2 = require('./routes/api/v1/oauth2');
@@ -54,6 +55,7 @@ app.use('/user', user);
 app.use('/login', login);
 app.use('/register', register);
 app.use('/message', message);
+app.use('/forget', forget);
 /**--------- oauth2 ---------**/
 app.use(apiOutput); //api方法
 app.use('/oauth2/v1', oauth2);//oauth route

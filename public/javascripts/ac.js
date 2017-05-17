@@ -185,3 +185,34 @@ AC.logout = function(){
         processData:true
     });
 };
+
+AC.resetUser = function(){
+    var p1 = $('#reg_passw').val();
+    var p2 = $('#reg_repassw').val();
+    if (p1 != p2)return alert('密码不匹配！');
+    if (p1.length < 1 || p2.length < 1)return alert('密码非法');
+    var md5 = $.md5(p1);
+    var md52 = $.md5(p2);
+    $.ajax({
+        //contentType:'application/json;charset=UTF-8',
+        type: 'POST',
+        url: AC.host + "/forget/update_profile",
+        data:{reg_nickname:$('#reg_nickname').val(), reg_email:$('#reg_email').val(), reg_passw:md5,reg_repassw:md52},
+        success: function(data){
+            console.log(data);
+
+            if (data.code === 442) {
+                alert(data.msg);
+            } else if (data.code === 200) {
+                window.location.assign(AC.host);
+            } else {
+                alert('update fail！');
+            }
+        },
+        error:function(e){
+            console.log(e);
+        },
+        dataType:'json',
+        xhrFields: {withCredentials: true},
+    });
+};
